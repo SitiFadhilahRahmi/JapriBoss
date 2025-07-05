@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -62,14 +63,25 @@ class UserResource extends Resource
                         ->maxLength(255)
                         ->columnSpanFull(),
                 ])->columns(["sm" => 1])->columnSpan(2),
-                Forms\Components\Section::make("Time Stamps")
-                    ->description("details of when data was changed and also created")
-                    ->schema([
-                        Forms\Components\Placeholder::make("created_at")
-                            ->content(fn(?User $record): string => $record ? date_format($record->created_at, "M d, Y") : "-"),
-                        Forms\Components\Placeholder::make("updated_at")
-                            ->content(fn(?User $record): string => $record ? date_format($record->updated_at, "M d, Y") : "-"),
-                    ])->columnSpan(1),
+                Forms\Components\Grid::make()->schema([
+                    Forms\Components\Section::make("Authority")
+                        ->description("details about the authority")
+                        ->schema([
+                            Forms\Components\Select::make('roles')
+                                ->relationship('roles', 'name')
+                                ->multiple()
+                                ->preload()
+                                ->searchable(),
+                        ]),
+                    Forms\Components\Section::make("Time Stamps")
+                        ->description("details of when data was changed and also created")
+                        ->schema([
+                            Forms\Components\Placeholder::make("created_at")
+                                ->content(fn(?User $record): string => $record ? date_format($record->created_at, "M d, Y") : "-"),
+                            Forms\Components\Placeholder::make("updated_at")
+                                ->content(fn(?User $record): string => $record ? date_format($record->updated_at, "M d, Y") : "-"),
+                        ])
+                ])->columnSpan(1),
             ])->columns(3);
     }
 
@@ -82,6 +94,13 @@ class UserResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('roles.name')
+                    ->badge()
+                    ->default("User has no role")
+                    ->colors([
+                        'danger' => 'User has no role'
+                    ])
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->date()
                     ->sortable()
@@ -90,6 +109,15 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+            ])
+            ->emptyStateIcon('heroicon-o-users')
+            ->emptyStateDescription('Create user and detail data.')
+            ->emptyStateActions([
+                Action::make('create')
+                    ->label('Create user')
+                    ->url(UserResource::getUrl('create'))
+                    ->icon('heroicon-m-plus')
+                    ->button(),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make()
