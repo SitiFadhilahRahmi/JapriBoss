@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Post;
+use App\Models\Product;
 use App\Models\Team;
 use App\Models\Testimonial;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
@@ -17,9 +18,9 @@ class DataOverview extends BaseWidget
                 ->description("Number of posts created")
                 ->descriptionIcon("heroicon-o-pencil-square")
                 ->color("success"),
-            Stat::make('Teams', Team::count())
-                ->description("Number of team members")
-                ->descriptionIcon("heroicon-o-users")
+            Stat::make('Products', Product::count())
+                ->description("Number of products")
+                ->descriptionIcon("heroicon-o-cube")
                 ->color("info"),
             Stat::make('Testimonials', Testimonial::count())
                 ->description("Testimonials from clients")
