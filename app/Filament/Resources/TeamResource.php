@@ -45,9 +45,25 @@ class TeamResource extends Resource
                         ->maxLength(255),
                     Forms\Components\Select::make('position_id')
                         ->label("Posisition")
+                        ->preload()
                         ->helperText("Team origin in her id")
                         ->searchable()
                         ->native(false)
+                        ->createOptionForm([
+                            Forms\Components\TextInput::make('name')
+                                ->label("Position Name")
+                                ->helperText("e.g Manager, Director, Supervisor")
+                                ->placeholder("Supervison")
+                                ->required()
+                                ->maxLength(255),
+                            Forms\Components\TextInput::make('level')
+                                ->label("Position Level")
+                                ->helperText("The smaller is the higger")
+                                ->placeholder("2")
+                                ->required()
+                                ->integer()
+                                ->numeric(),
+                        ])
                         ->relationship("position", "name")
                         ->required(),
                     Forms\Components\TextInput::make('occupation')
