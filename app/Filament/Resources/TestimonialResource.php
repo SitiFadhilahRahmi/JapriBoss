@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TestimonialResource\Pages;
 use App\Filament\Resources\TestimonialResource\RelationManagers;
 use App\Models\Testimonial;
+use App\Settings\AppSetting;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -45,7 +46,6 @@ class TestimonialResource extends Resource
                         ->label("Client Occupation")
                         ->helperText("The occupation of client in the project")
                         ->placeholder("Director")
-                        ->required()
                         ->maxLength(255),
                     Forms\Components\Textarea::make('messages')
                         ->rows(5)
@@ -55,9 +55,22 @@ class TestimonialResource extends Resource
                         ->required()
                         ->maxLength(255),
                 ])->columns(["sm" => 1])->columnSpan(2),
-                Forms\Components\Section::make("Time Stamps")
+                Forms\Components\Section::make("Time Stamps & Detail")
                     ->description("details of when data was changed and also created")
                     ->schema([
+                        Forms\Components\Select::make('language')
+                            ->helperText("The language of this testimonials")
+                            ->placeholder("Indonesia")
+                            ->required()
+                            ->options(function () {
+                                $languages = app(AppSetting::class)->languages;
+
+                                return collect($languages)
+                                    ->mapWithKeys(fn($lang) => [$lang['iso_code'] => $lang['name']])
+                                    ->toArray();
+                            })
+                            ->native(false)
+                            ->default("ID"),
                         Forms\Components\Placeholder::make("created_at")
                             ->content(fn(?Testimonial $record): string => $record ? date_format($record->created_at, "M d, Y") : "-"),
                         Forms\Components\Placeholder::make("updated_at")
@@ -70,18 +83,20 @@ class TestimonialResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('thumbnail_id')
-                    ->numeric()
+                Tables\Columns\ImageColumn::make('thumbnail.path')
+                    ->default("https://cdn-icons-png.flaticon.com/512/13434/13434972.png")
                     ->sortable(),
-                Tables\Columns\TextColumn::make('messages')
-                    ->searchable(),
+                Tables\Columns\ImageColumn::make('avatar.path')
+                    ->circular()
+                    ->default("https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541")
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('client_name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('client_occupation')
+                Tables\Columns\TextColumn::make('messages')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('avatar_id')
-                    ->numeric()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('client_occupation')
+                    ->placeholder("Occupation is null")
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()

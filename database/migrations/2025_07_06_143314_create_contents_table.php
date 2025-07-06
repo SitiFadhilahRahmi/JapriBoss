@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string("messages");
             $table->string("language");
             $table->string("client_name");
-            $table->string("client_occupation");
-            $table->integer("avatar_id");
+            $table->string("client_occupation")->nullable();
+            $table->integer("avatar_id")->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
