@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
+use App\Filament\Resources\PostResource\Widgets\PostOverview;
 use App\Models\Post;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms;
@@ -117,7 +118,11 @@ class PostResource extends Resource
                         CuratorPicker::make("thumbnail_id")
                             ->label("Thumbnail")
                             ->helperText("Post thumbnail image")
-                            ->relationship("thumbnail", "path"),
+                            ->imageCropAspectRatio(
+                                '16:9',
+                                '4:3',
+                                '1:1',
+                            )->relationship("thumbnail", "path"),
                         Forms\Components\Placeholder::make("created_at")
                             ->content(fn(?Post $record): string => $record ? date_format($record->created_at, "M d, Y") : "-"),
                         Forms\Components\Placeholder::make("updated_at")
