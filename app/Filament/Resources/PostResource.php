@@ -8,6 +8,7 @@ use App\Filament\Resources\PostResource\Widgets\PostOverview;
 use App\Models\Post;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieTagsInput;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
@@ -123,6 +124,7 @@ class PostResource extends Resource
                                 '4:3',
                                 '1:1',
                             )->relationship("thumbnail", "path"),
+                        SpatieTagsInput::make('tags'),
                         Forms\Components\Placeholder::make("created_at")
                             ->content(fn(?Post $record): string => $record ? date_format($record->created_at, "M d, Y") : "-"),
                         Forms\Components\Placeholder::make("updated_at")
