@@ -7,11 +7,14 @@ use App\Filament\Resources\CategoryResource\RelationManagers;
 use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
 class CategoryResource extends Resource
 {
@@ -41,6 +44,7 @@ class CategoryResource extends Resource
                 Forms\Components\TextInput::make('slug')
                     ->placeholder("programming")
                     ->helperText("Result slug of the category")
+                    ->readOnly()
                     ->unique(ignoreRecord: true)
                     ->required()
                     ->maxLength(255),
