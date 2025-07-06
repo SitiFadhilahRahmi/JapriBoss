@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
+use App\Settings\AppSetting;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -80,11 +81,13 @@ class ProductResource extends Resource
                             ->helperText("The language of this post")
                             ->placeholder("Indonesia")
                             ->required()
-                            ->options([
-                                "ID" => "Indonesia",
-                                "EN" => "English",
-                                "CN" => "China"
-                            ])
+                            ->options(function () {
+                                $languages = app(AppSetting::class)->languages;
+
+                                return collect($languages)
+                                    ->mapWithKeys(fn($lang) => [$lang['iso_code'] => $lang['name']])
+                                    ->toArray();
+                            })
                             ->native(false)
                             ->default("ID"),
                         CuratorPicker::make("thumbnail_id")

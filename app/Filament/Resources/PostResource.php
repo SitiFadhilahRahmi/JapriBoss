@@ -6,6 +6,7 @@ use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
 use App\Filament\Resources\PostResource\Widgets\PostOverview;
 use App\Models\Post;
+use App\Settings\AppSetting;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieTagsInput;
@@ -90,11 +91,13 @@ class PostResource extends Resource
                         ->helperText("The language of this post")
                         ->placeholder("Indonesia")
                         ->required()
-                        ->options([
-                            "ID" => "Indonesia",
-                            "EN" => "English",
-                            "CN" => "China"
-                        ])
+                        ->options(function () {
+                            $languages = app(AppSetting::class)->languages;
+
+                            return collect($languages)
+                                ->mapWithKeys(fn($lang) => [$lang['iso_code'] => $lang['name']])
+                                ->toArray();
+                        })
                         ->native(false)
                         ->default("ID"),
                     Forms\Components\Textarea::make('excerpt')
