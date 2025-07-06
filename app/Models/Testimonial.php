@@ -16,7 +16,7 @@ class Testimonial extends Model
         "messages",
         "client_name",
         "client_occupation",
-        "avatar"
+        "avatar_id"
     ];
 
     public function thumbnail()
