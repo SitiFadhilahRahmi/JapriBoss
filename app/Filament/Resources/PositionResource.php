@@ -33,7 +33,7 @@ class PositionResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('level')
-                    ->label("Position Leve")
+                    ->label("Position Level")
                     ->helperText("The smaller is the higger")
                     ->placeholder("2")
                     ->required()
