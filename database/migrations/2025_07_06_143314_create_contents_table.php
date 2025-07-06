@@ -49,9 +49,20 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->string("slug");
+            $table->string("language");
             $table->string("category");
             $table->text("description");
-            $table->json("spesification");
+            $table->json("spesification")->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
+        Schema::create('media_product', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            $table->foreignId('media_id')->constrained('media')->onDelete('cascade');
+            $table->integer('order');
             $table->timestamps();
         });
     }
