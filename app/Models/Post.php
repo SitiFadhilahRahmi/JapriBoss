@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Awcodes\Curator\Models\Media;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -20,7 +21,7 @@ class Post extends Model
         "category_id",
         "user_id",
         "language",
-        "pubshied_at",
+        "published_at",
     ];
 
     public function category()
