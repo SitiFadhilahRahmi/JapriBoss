@@ -14,6 +14,7 @@ class Testimonial extends Model
     protected $fillable = [
         'thumbnail_id',
         "messages",
+        "language",
         "client_name",
         "client_occupation",
         "avatar_id"

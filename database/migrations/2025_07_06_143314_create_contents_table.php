@@ -15,9 +15,20 @@ return new class extends Migration
             $table->id();
             $table->integer("thumbnail_id")->nullable();
             $table->string("messages");
+            $table->string("language");
             $table->string("client_name");
             $table->string("client_occupation");
             $table->integer("avatar_id");
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
+        Schema::create('faqs', function (Blueprint $table) {
+            $table->id();
+            $table->string("question");
+            $table->string("answer");
+            $table->string("topic")->nullable()->default("general");
+            $table->string("language");
             $table->softDeletes();
             $table->timestamps();
         });
@@ -74,7 +85,9 @@ return new class extends Migration
     {
         Schema::dropIfExists('testimonials');
         Schema::dropIfExists('categories');
+        Schema::dropIfExists('faqs');
         Schema::dropIfExists('blog');
         Schema::dropIfExists('products');
+        Schema::dropIfExists('media_product');
     }
 };
