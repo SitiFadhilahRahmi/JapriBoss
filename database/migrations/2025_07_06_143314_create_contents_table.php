@@ -11,6 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('testimonials', function (Blueprint $table) {
+            $table->id();
+            $table->integer("thumbnail_id")->nullable();
+            $table->string("messages");
+            $table->string("client_name");
+            $table->string("client_occupation");
+            $table->integer("avatar_id");
+            $table->softDeletes();
+            $table->timestamps();
+        });
+
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string("name");
@@ -34,6 +45,15 @@ return new class extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string("name");
+            $table->string("category");
+            $table->text("description");
+            $table->json("spesification");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -41,6 +61,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('testimonials');
+        Schema::dropIfExists('categories');
         Schema::dropIfExists('blog');
+        Schema::dropIfExists('products');
     }
 };
