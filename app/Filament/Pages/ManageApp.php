@@ -21,6 +21,7 @@ class ManageApp extends SettingsPage
     public function form(Form $form): Form
     {
         return $form
+            // TODO : create conatct setting
             ->schema([
                 Forms\Components\Grid::make()->schema([
                     Forms\Components\Section::make([
@@ -46,6 +47,26 @@ class ManageApp extends SettingsPage
                             ->helperText('Your Site description for SEO')
                             ->maxLength(255),
                     ]),
+                    Forms\Components\Section::make("contacts")
+                        ->schema([
+                            Forms\Components\TextInput::make('contacts.email')
+                                ->helperText('Your organization profesional email')
+                                ->placeholder("info@company.com")
+                                ->email()
+                                ->maxLength(255),
+                            Forms\Components\TextInput::make('contacts.phone_number')
+                                ->helperText('Your organization profesional phone number')
+                                ->placeholder("1234-5678-90")
+                                ->numeric()
+                                ->tel()
+                                ->maxLength(255),
+                            Forms\Components\Textarea::make('contacts.address')
+                                ->rows(4)
+                                ->helperText("Your organization address!")
+                                ->placeholder('Laravel S.t Welcome')
+                                ->maxLength(255),
+                        ])->columns(1)
+                        ->collapsible(),
                     Forms\Components\Section::make("Social Media")
                         ->schema([
                             Forms\Components\Repeater::make("social_media")->schema([

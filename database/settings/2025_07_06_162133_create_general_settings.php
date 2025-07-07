@@ -11,6 +11,7 @@ return new class extends SettingsMigration
         $this->migrator->add('app.site_author', "Admin");
         $this->migrator->add('app.site_description', "Your site description!");
         $this->migrator->add('app.social_media', []);
+        $this->migrator->add('app.contacts', ["email" => "laravel@example.com", "adderss" => "", "phone_number" => ""]);
         $this->migrator->add('app.languages', [["name" => "Indonesia", "iso_code" => "ID"]]);
         $this->migrator->add('app.favicon', null);
         $this->migrator->add('app.logo', null);
