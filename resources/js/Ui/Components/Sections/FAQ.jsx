@@ -21,6 +21,7 @@ const FAQ = () => {
                     <div className="md:px-4">
                         {faqData.map((data, index) => (
                             <button
+                                key={index}
                                 onClick={() => {
                                     setCategoryIndex(index);
                                     setContent(data.content);
@@ -38,7 +39,7 @@ const FAQ = () => {
                     </div>
                     <div className="md:px-4 col-span-3">
                         {content.map((data, index) => (
-                            <>
+                            <div key={index}>
                                 <div
                                     onClick={() => setActiveIndex(index)}
                                     className="py-5 cursor-pointer flex justify-between items-center"
@@ -71,7 +72,7 @@ const FAQ = () => {
                                         {data.answer}
                                     </p>
                                 </div>
-                            </>
+                            </div>
                         ))}
                     </div>
                 </div>
