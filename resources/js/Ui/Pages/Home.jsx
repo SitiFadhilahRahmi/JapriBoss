@@ -15,7 +15,7 @@ export default function Home() {
                     <div className="w-full flex flex-wrap-reverse items-center">
                         <div className="w-full lg:w-1/2 md:px-4">
                             <SectionInfo title="partners pioneer together" />
-                            <h1 className="capitalize text-5xl md:text-5xl lg:text-6xl max-w-xl font-semibold md:leading-normal  lg:leading-normal mt-5 mb-6">
+                            <h1 className="capitalize text-5xl md:text-5xl lg:text-6xl max-w-xl font-bold md:leading-normal lg:leading-snug mt-5 mb-6">
                                 your brand journey can start from here, with us{" "}
                                 <span className="font-popins font-bold text-blue-600">
                                     BRARTI
@@ -138,7 +138,7 @@ export default function Home() {
                     <div className="w-full flex flex-col lg:flex-row-reverse items-center lg:items-start">
                         <div className="w-full lg:w-1/2 md:px-4 mb-10 lg:mb-0 space-y-6 lg:pl-12">
                             <SectionInfo title="What we do" />
-                            <h1 className="max-w-md font-semibold text-4xl md:text-5xl lg:text-6xl leading-tight md:leading-snug lg:leading-snug capitalize text-gray-800">
+                            <h1 className="max-w-md font-bold text-4xl md:text-5xl lg:text-6xl leading-tight md:leading-snug lg:leading-snug capitalize text-gray-800">
                                 What{" "}
                                 <span className="font-bold text-blue-600">
                                     BRARTI
