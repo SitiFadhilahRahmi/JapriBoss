@@ -102,11 +102,11 @@ const Navbar = () => {
                             </Link>
                             <Link
                                 className={`transition-all ${
-                                    url === "/"
+                                    url === "/contact-us"
                                         ? "hover:opacity-50"
                                         : "opacity-70 hover:opacity-100"
                                 }`}
-                                href="/"
+                                href="/contact-us"
                             >
                                 Contact Us
                             </Link>
