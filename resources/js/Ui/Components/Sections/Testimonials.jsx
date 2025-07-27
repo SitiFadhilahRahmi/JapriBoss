@@ -10,7 +10,7 @@ const Testimonials = () => {
                     <SectionInfo title="Why Choose Us" />
                     <h1 className="text-3xl hidden md:block md:text-4xl lg:text-5xl font-bold mx-auto max-w-2xl capitalize mt-5">
                         Hear what our clients Say our commitmentand textile
-                        manufacturing.
+                        manufacturing
                     </h1>
                 </div>
                 <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-6 mt-8 md:mt-10">

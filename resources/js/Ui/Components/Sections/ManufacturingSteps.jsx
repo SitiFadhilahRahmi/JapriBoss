@@ -13,7 +13,7 @@ const ManufacturingSteps = () => {
                 <div className="w-full text-center">
                     <SectionInfo title="Our Manufacturing Process" />
                     <h1 className="text-3xl hidden md:block md:text-4xl lg:text-5xl font-bold mx-auto max-w-lg capitalize mt-5">
-                        Our state-of-the-art facilities and skilled workforce.
+                        Our state-of-the-art facilities and skilled workforce
                     </h1>
                 </div>
                 <div className="w-full mt-10 md:mt-14 justify-between hidden md:flex">
