@@ -5,6 +5,7 @@ import { featuredProducts, services } from "../../Const/Home";
 import ManufacturingSteps from "../Components/Sections/ManufacturingSteps";
 import Testimonials from "../Components/Sections/Testimonials";
 import FAQ from "../Components/Sections/FAQ";
+import ContactUs from "../Components/Sections/ContactUs";
 
 export default function Home() {
     return (
@@ -142,7 +143,7 @@ export default function Home() {
                                 <span className="font-bold text-blue-600">
                                     BRARTI
                                 </span>{" "}
-                                do for you and your brand.
+                                do for you and your brand
                             </h1>
 
                             <p className="text-xs md:text-sm text-slate-600 max-w-lg mb-8 leading-relaxed md:leading-relaxed">
@@ -245,6 +246,7 @@ export default function Home() {
             </section>
             <Testimonials />
             <FAQ />
+            <ContactUs />
         </>
     );
 }
