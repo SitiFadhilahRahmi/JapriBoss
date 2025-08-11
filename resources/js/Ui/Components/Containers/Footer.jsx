@@ -7,11 +7,10 @@ const Footer = () => {
             <div className="container">
                 <div className="w-full md:w-1/2 mb-14 space-y-6">
                     <h1 className="font-popins text-xl lg:text-2xl font-bold text-white">
-                        BRARTI
+                        JAPRIBOSS
                     </h1>
                     <p className="text-sm leading-relaxed max-w-md text-slate-300">
-                        Making the world a better place through constructing
-                        elegant hierarchies.
+                        Anda butuh, kami siap disuruh!
                     </p>
                     <div className="flex gap-5">
                         {socialMedia.map((data) => (
@@ -75,7 +74,7 @@ const Footer = () => {
 
                 {/* Garis dan Copyright */}
                 <div className="mt-12 border-t border-slate-800 pt-6 text-sm text-slate-300">
-                    © 2024 BRARTI, Inc. All rights reserved.
+                    © 2025 JAPRIBOSS, Inc. All rights reserved.
                 </div>
             </div>
         </footer>

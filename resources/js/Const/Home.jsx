@@ -13,110 +13,102 @@ import { MdVerified } from "react-icons/md";
 
 const services = [
     {
-        title: "Fabric Manufacturing",
+        title: "Layanan Rumah Tangga",
         icon: IoColorWandSharp,
         content:
-            "From raw materials to finished fabrics, we specialize in cotton for various applications.",
+            "Dari membersihkan rumah, perbaikan kecil, hingga perawatan taman, mitra kami siap membuat rumah Anda nyaman dan terawat.",
     },
     {
-        title: "Custom Textile Solutions",
+        title: "Layanan Personal & Bisnis",
         icon: FaPalette,
         content:
-            "Collaborate with our team to develop bespoke textile solutions tailored to your specific requirements and designs.",
+            "Butuh bantuan untuk tugas-tugas personal atau pekerjaan kantor? Kami menyediakan asisten pribadi, layanan IT, hingga dukungan acara sesuai kebutuhan Anda.",
     },
     {
-        title: "Dyeing & Finishing",
+        title: "Perbaikan & Perawatan",
         icon: FaSprayCan,
         content:
-            "Utilizing advanced techniques, we offer a wide range of dyeing and finishing options to achieve desired textures, colors, and functionalities.",
+            "Masalah pada kendaraan, elektronik, atau perangkat lainnya? Mitra ahli kami siap memberikan solusi perbaikan dan perawatan yang cepat dan dapat diandalkan.",
     },
     {
-        title: "Quality Assurance",
+        title: "Any Request",
         icon: MdVerified,
         content:
-            "Rigorous quality control at every stage ensures our textiles meet international standards and exceed client expectations.",
-    },
+            "Punya permintaan? Cukup sampaikan kepada kami. Kami siap menerima tantangan baru untuk memastikan setiap kebutuhan Anda terpenuhi.",
+    }
 ];
 
 const featuredProducts = [
     {
         id: "fp001",
-        name: "Eco-Blend Performance Fabric",
-        category: "Man Shoes",
-        description:
-            "A sustainable blend of recycled polyester and organic cotton, offering exceptional durability, breathability, and a soft hand-feel. Ideal for activewear and casual apparel.",
-        imageUrl:
-            "https://placehold.co/600x600/A8DADC/2F4F4F?text=Eco-Blend+Fabric",
-        link: "/products/eco-blend-performance-fabric",
+        title: "Membersihkan rumah",
+        imageUrl:"/assets/galeri1.png"
+,
     },
     {
         id: "fp002",
-        name: "Premium Silk Twill",
-        category: "Women Bag",
-        description:
-            "Luxurious 100% silk twill, known for its elegant drape, subtle sheen, and vibrant color absorption. Perfect for high-end fashion, scarves, and decorative applications.",
-        imageUrl:
-            "https://placehold.co/600x600/F4A261/2F4F4F?text=Premium+Silk+Twill",
-        link: "/products/premium-silk-twill",
+        title: "Mengantar Barang",
+        imageUrl:"/assets/galeri5.png"
+
     },
     {
         id: "fp003",
-        name: "Industrial Grade Canvas",
-        category: "Sport Shoes",
-        description:
-            "Heavy-duty cotton canvas treated for water and tear resistance. Engineered for demanding industrial applications, outdoor gear, and durable bags.",
-        imageUrl:
-            "https://placehold.co/600x600/2A9D8F/2F4F4F?text=Industrial+Canvas",
-        link: "/products/industrial-grade-canvas",
+        title: "Jasa Ketik",
+        imageUrl:"/assets/galeri2.png"
+
     },
     {
         id: "fp004",
-        name: "Smart Textile - Temperature Regulating",
-        category: "Military Uniform",
-        description:
-            "An innovative fabric infused with phase-change materials that actively regulate body temperature, providing comfort in varying climates. Ideal for specialized apparel and bedding.",
-        imageUrl:
-            "https://placehold.co/600x600/E76F51/2F4F4F?text=Smart+Textile",
-        link: "/products/smart-textile-temp-regulating",
+        title: "Memperbaiki Kendaraan",
+        imageUrl:"/assets/galeri6.png"
+    },
+    {
+        id: "fp004",
+        title: "Memasang AC",
+        imageUrl:"/assets/galeri3.png"
+
+    },
+    {
+        id: "fp005",
+        title: "Membuat Website",
+        imageUrl:"/assets/galeri4.png"
+
     },
 ];
 
-const manufacturingProcessSteps = [
+const AlurKamiBekerja = [
     {
         id: "mps001",
-        title: "Sustainable Material Sourcing",
+        title: "Sampaikan Kebutuhan Anda",
         description:
-            "Our commitment begins with carefully selected raw materials. We prioritize sustainable and ethically sourced fibers.",
-        icon: <FaBoxes className="text-blue-600 text-4xl mb-4" />, // Icon for raw materials/sourcing
-        imageUrl:
-            "https://placehold.co/600x400/90EE90/333333?text=Material+Sourcing",
+            "Sampaikan apapun kebutuhan Anda kepada kami, isi detailnya, dan kami akan segera memproses permintaan Anda",
+        icon: <FaBoxes className="text-blue-600 text-4xl mb-4" />,
+        imageUrl:"/assets/step1.png"
+
     },
     {
         id: "mps002",
-        title: "Advanced Weaving & Knitting",
+        title: "Kami carikan mitranya",
         description:
-            "Utilizing state-of-the-art machinery and skilled artisans, we transform raw fibers into high-quality fabrics. ",
-        icon: <FaCogs className="text-green-600 text-4xl mb-4" />, // Icon for machinery/process
-        imageUrl:
-            "https://placehold.co/600x400/ADD8E6/333333?text=Weaving+Knitting",
+            "Setelah permintaan Anda masuk, sistem kami akan mencocokkan Anda dengan mitra yang sesuai dengan kebutuhan Anda.",
+        icon: <FaCogs className="text-green-600 text-4xl mb-4" />,
+        imageUrl:"/assets/step2.png"
     },
     {
         id: "mps003",
-        title: "Precision Dyeing & Finishing",
+        title: "Mitra kami akan menghubungi Anda",
         description:
-            "Our fabrics undergo meticulous dyeing and finishing processes. We employ eco-friendly dyes and innovative treatments to achieve vibrant colors.",
-        icon: <FaTint className="text-purple-600 text-4xl mb-4" />, // Icon for dyeing/finishing
-        imageUrl:
-            "https://placehold.co/600x400/FFB6C1/333333?text=Dyeing+Finishing",
+            "Mitra kami akan menghubungi Anda untuk mendiskusikan detail lebih lanjut dan memastikan semua kebutuhan Anda terpenuhi.",
+        icon: <FaTint className="text-purple-600 text-4xl mb-4" />,
+        imageUrl:"/assets/step3.png"
     },
     {
         id: "mps004",
-        title: "Rigorous Quality Control",
+        title: "Pengerjaan",
         description:
-            "Every meter of fabric is subjected to stringent quality checks. From thread count to colorfastness and strength.",
-        icon: <FaCheckSquare className="text-red-600 text-4xl mb-4" />, // Icon for quality check
-        imageUrl:
-            "https://placehold.co/600x400/FFD700/333333?text=Quality+Control",
+            "Mitra akan datang dan menyelesaikan pekerjaan Anda dengan cepat. ",
+        icon: <FaCheckSquare className="text-red-600 text-4xl mb-4" />,
+        imageUrl:"/assets/step4.png"
     },
 ];
 
@@ -264,7 +256,7 @@ export {
     services,
     featuredProducts,
     socialMedia,
-    manufacturingProcessSteps,
+    AlurKamiBekerja,
     testimonials,
     faqData,
 };

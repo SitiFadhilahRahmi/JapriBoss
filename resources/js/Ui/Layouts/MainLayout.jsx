@@ -1,5 +1,6 @@
 import Footer from "../Components/Containers/Footer";
 import Navbar from "../Components/Containers/Navbar";
+import Wa from "../Components/Containers/Wa";
 
 const MainLayout = ({ children }) => {
     return (
@@ -7,6 +8,7 @@ const MainLayout = ({ children }) => {
             <Navbar />
             {children}
             <Footer />
+            <Wa />
         </>
     );
 };

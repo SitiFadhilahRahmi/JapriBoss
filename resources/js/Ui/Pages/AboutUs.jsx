@@ -10,7 +10,7 @@ const AboutUs = () => {
             <section className="py-24 md:py-30 overflow-hidden">
                 <div className="relative bg-black text-white py-56 md:py-72">
                     <img
-                        src={"assets/about-us.jpg"}
+                        src={"assets/logo2.png"}
                         alt="Bitcoin Banner"
                         className="absolute inset-0 w-full h-full object-cover opacity-50"
                     />
@@ -19,7 +19,7 @@ const AboutUs = () => {
                             About Us
                         </p>
                         <h1 className="text-lg capitalize sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight text-center max-w-3xl mx-auto">
-                            Our Vision and our mision{" "}
+                            Visi Misi Kami{" "}
                         </h1>
                     </div>
                 </div>
@@ -31,16 +31,13 @@ const AboutUs = () => {
                             <div className="space-y-6 w-full md:w-4/5 mx-auto">
                                 <SectionInfo title="Our Vision" />
                                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold max-w-2xl capitalize">
-                                    Shaping a Sustainable Future
+                                    Visi Kami
                                 </h1>
                                 <p className="text-xs md:text-sm leading-relaxed text-slate-600 max-w-sm">
-                                    At BRARTI, our vision is to lead the
-                                    transformation of the textile industry
-                                    through sustainability and innovation. We
-                                    strive to create long-lasting positive
-                                    impact by embracing eco-conscious practices
-                                    that inspire change and preserve our planet
-                                    for future generations.
+                                    Menjadi platform layanan terdepan dan terpercaya
+                                    yang menjadi solusi utama bagi setiap kebutuhan harian masyarakat,
+                                    menciptakan ekosistem di mana setiap orang dapat
+                                    dengan mudah mendapatkan bantuan profesional.
                                 </p>
                             </div>
                         </div>
@@ -66,17 +63,18 @@ const AboutUs = () => {
                         </div>
                         <div className="w-full md:w-1/2 md:px-4">
                             <div className="space-y-6 w-full md:w-4/5 mx-auto">
-                                <SectionInfo title="Our Vision" />
+                                <SectionInfo title="Our Mission" />
                                 <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold max-w-2xl capitalize">
-                                    Acting Responsibly, Producing Consciously
+                                    Misi Kami
                                 </h1>
                                 <p className="text-xs md:text-sm leading-relaxed text-slate-600 max-w-sm">
-                                    Our mission is to deliver high-quality
-                                    textiles through ethical manufacturing,
-                                    sustainable sourcing, and innovative design.
-                                    We are committed to minimizing our
-                                    environmental impact while empowering our
-                                    community and partners to do the same.
+                                    Misi kami adalah menjadi jembatan terpercaya yang secara cerdas
+                                    menghubungkan pelanggan dengan jaringan mitra jasa profesional, terverifikasi, dan andal.
+                                    Kami berkomitmen untuk mempermudah setiap aspek kehidupan sehari-hari dengan
+                                    menyediakan solusi yang cepat, efisien, dan transparan,
+                                    mulai dari urusan rumah tangga, perbaikan, hingga kebutuhan profesional.
+                                    Melalui teknologi inovatif kami, kami berupaya menciptakan platform yang tidak hanya memberikan kemudahan
+                                    bagi pelanggan, tetapi juga memberdayakan para mitra kami dengan peluang kerja yang adil dan berkelanjutan.
                                 </p>
                             </div>
                         </div>
@@ -84,7 +82,7 @@ const AboutUs = () => {
                 </div>
             </section>
             <Testimonials />
-            <FAQ />
+            {/* <FAQ /> */}
         </>
     );
 };

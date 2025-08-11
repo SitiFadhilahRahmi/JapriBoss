@@ -40,7 +40,7 @@ const Navbar = () => {
                     <div className="w-full flex md:px-4 justify-between items-center">
                         <Link href={"/"}>
                             <h1 className="font-popins font-bold text-3xl text-text">
-                                BRARTI
+                                JAPRIBOSS
                             </h1>
                         </Link>
                         <div className="md:hidden">
@@ -79,16 +79,6 @@ const Navbar = () => {
                                 href="/"
                             >
                                 Service
-                            </Link>
-                            <Link
-                                className={`transition-all ${
-                                    url === "/"
-                                        ? "hover:opacity-50"
-                                        : "opacity-70 hover:opacity-100"
-                                }`}
-                                href="/"
-                            >
-                                Blog
                             </Link>
                             <Link
                                 className={`transition-all ${
