@@ -1,0 +1,21 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-D9ktBTO8.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/filament/admin-panel/theme.css": {
+    "file": "assets/theme-D6SVtwDl.css",
+    "src": "resources/css/filament/admin-panel/theme.css",
+    "isEntry": true
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-C5tIeggn.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "css": [
+      "assets/app-D9ktBTO8.css"
+    ]
+  }
+}
