@@ -37,7 +37,6 @@ const ContactUs = () => {
                                         href="mailto:japriboss@gmail.com"
                                     >
                                         japriboss@gmail.com
-
                                     </a>
                                 </p>
                             </div>
@@ -52,14 +51,19 @@ const ContactUs = () => {
                         </div>
                     </div>
                     <div className="w-full md:w-1/2 md:px-4">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d617.6046428270555!2d100.18331723854767!3d-0.693718123649167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1754901794877!5m2!1sid!2sid"
-                            width="600"
-                            height="450"
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
+                        {/* Wadah fleksibel untuk jaga rasio */}
+                        <div
+                            className="relative w-full"
+                            style={{ paddingTop: "56.25%" }}
+                        >
+                            <iframe
+                                className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d617.6046428270555!2d100.18331723854767!3d-0.693718123649167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1754901794877!5m2!1sid!2sid"
+                                allowFullScreen=""
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
